@@ -91,7 +91,7 @@ public class OBSsearch extends UtilContext {
 				LOG.error("option required: {}", OPTION_SERVER_URL);
 			}
 
-			// id
+			// id (Observation UUID for Search)
 			if (cl.hasOption(OPTION_ID)) {
 				String id = cl.getOptionValue(OPTION_ID);
 				LOG.info("option {}={}", OPTION_ID, id);
@@ -99,7 +99,7 @@ public class OBSsearch extends UtilContext {
 				optionMap.put(OPTION_ID, id);
 			}
 
-			// Observation UUID
+			// Observation UUID (for lookup)
 			if (cl.hasOption(OPTION_OBSERVATION_UUID)) {
 				String observationUuid = cl.getOptionValue(OPTION_OBSERVATION_UUID);
 				LOG.info("option {}={}", OPTION_OBSERVATION_UUID, observationUuid);
@@ -115,7 +115,7 @@ public class OBSsearch extends UtilContext {
 				optionMap.put(OPTION_PATIENT_UUID, patientUuid);
 			}
 
-			// status
+			// status (Observation Status : registered | preliminary | final | amended)
 			if (cl.hasOption(OPTION_STATUS)) {
 				String[] component = cl.getOptionValue(OPTION_STATUS).split(",");
 				List<String> statusList = getComponentList(component);
@@ -124,7 +124,7 @@ public class OBSsearch extends UtilContext {
 				optionMap.put(OPTION_STATUS, statusList);
 			}
 
-			// issuedDate
+			// Date (issued)
 			if (cl.hasOption(OPTION_DATE)) {
 				String[] component = cl.getOptionValue(OPTION_DATE).split(",");
 				List<String> dateList = getComponentList(component);
@@ -133,7 +133,7 @@ public class OBSsearch extends UtilContext {
 				optionMap.put(OPTION_DATE, dateList);
 			}
 
-			// category
+			// category (Classification of type of observation)
 			if (cl.hasOption(OPTION_CATEGORY)) {
 				String[] component = cl.getOptionValue(OPTION_CATEGORY).split(",");
 				List<String> categoryList = getComponentList(component);
@@ -142,7 +142,7 @@ public class OBSsearch extends UtilContext {
 				optionMap.put(OPTION_CATEGORY, categoryList);
 			}
 
-			// code
+			// code (Type of observation (code / type) - LOINC, SNOMED,... etc)
 			if (cl.hasOption(OPTION_CODE)) {
 				String[] component = cl.getOptionValue(OPTION_CODE).split(",");
 				List<String> codeList = getComponentList(component);
